@@ -36,8 +36,8 @@ class RenderStickyHeader extends RenderBox
   })  : _scrollPosition = scrollPosition,
         _callback = callback,
         _overlapHeaders = overlapHeaders {
-    if (content != null) add(content);
     if (header != null) add(header);
+    if (content != null) add(content);
   }
 
   set scrollPosition(ScrollPosition newValue) {
@@ -82,9 +82,9 @@ class RenderStickyHeader extends RenderBox
   }
 
   // short-hand to access the child RenderObjects
-  RenderBox get _headerBox => lastChild!;
+  RenderBox get _headerBox => firstChild!;
 
-  RenderBox get _contentBox => firstChild!;
+  RenderBox get _contentBox => lastChild!;
 
   @override
   void performLayout() {
@@ -101,8 +101,7 @@ class RenderStickyHeader extends RenderBox
 
     // determine size of ourselves based on content widget
     final width = max(constraints.minWidth, _contentBox.size.width);
-    final height =
-        max(constraints.minHeight, _overlapHeaders ? contentHeight : headerHeight + contentHeight);
+    final height = max(constraints.minHeight, _overlapHeaders ? contentHeight : headerHeight + contentHeight);
     size = Size(width, height);
     assert(size.width == constraints.constrainWidth(width));
     assert(size.height == constraints.constrainHeight(height));

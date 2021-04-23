@@ -39,7 +39,7 @@ class StickyHeader extends MultiChildRenderObjectWidget {
   }) : super(
           key: key,
           // Note: The order of the children must be preserved for the RenderObject.
-          children: [content, header],
+          children: [header, content],
         );
 
   /// Header to be shown at the top of the parent [Scrollable] content.

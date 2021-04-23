@@ -86,8 +86,7 @@ class Example1 extends StatelessWidget {
                 ),
               ),
               content: Container(
-                child: Image.network(imageForIndex(index),
-                    fit: BoxFit.cover, width: double.infinity, height: 200.0),
+                child: Image.network(imageForIndex(index), fit: BoxFit.cover, width: double.infinity, height: 200.0),
               ),
             ),
           );
@@ -143,8 +142,7 @@ class Example2 extends StatelessWidget {
                           opacity: stuckAmount,
                           child: IconButton(
                             icon: Icon(Icons.favorite, color: Colors.white),
-                            onPressed: () => ScaffoldMessenger.of(context)
-                                .showSnackBar(SnackBar(content: Text('Favorite #$index'))),
+                            onPressed: () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Favorite #$index'))),
                           ),
                         ),
                       ),
@@ -153,8 +151,7 @@ class Example2 extends StatelessWidget {
                 );
               },
               content: Container(
-                child: Image.network(imageForIndex(index),
-                    fit: BoxFit.cover, width: double.infinity, height: 200.0),
+                child: Image.network(imageForIndex(index), fit: BoxFit.cover, width: double.infinity, height: 200.0),
               ),
             ),
           );
